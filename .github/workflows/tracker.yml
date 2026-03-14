@@ -10,11 +10,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-      - run: pip install -r requirements.txt
-      - run: python tracker.py
+      - run: pip3 install -r requirements.txt
+      - run: python3 tracker.py
       - name: Save inventory
         run: |
           git config user.name "github-actions"
