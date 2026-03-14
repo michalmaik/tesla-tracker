@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-WEBHOOK = os.environ["https://discord.com/api/webhooks/1482283053517635727/Gm78jbF1vKmnseZLraPJB-8yYoTZn1P3fMI536s6lFhrM1tQ3_I-_nRwKe2_UUxgMjOa"]
+WEBHOOK = "https://discord.com/api/webhooks/1482283053517635727/Gm78jbF1vKmnseZLraPJB-8yYoTZn1P3fMI536s6lFhrM1tQ3_I-_nRwKe2_UUxgMjOa"
 PRICE_LIMIT = 20000
 MARKETS = [
     ("DE","Germany"),
