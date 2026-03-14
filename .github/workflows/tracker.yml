@@ -13,8 +13,6 @@ jobs:
           python-version: "3.10"
       - run: pip install -r requirements.txt
       - run: python tracker.py
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Save inventory
         run: |
           git config user.name "github-actions"
