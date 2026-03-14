@@ -60,9 +60,3 @@ def check():
     save_data({VIN: new_price})
 
 check()
-```
-
-I zaktualizuj `requirements.txt` — dodaj `beautifulsoup4`:
-```
-requests
-beautifulsoup4
