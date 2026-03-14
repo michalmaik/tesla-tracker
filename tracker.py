@@ -90,3 +90,8 @@ def check():
                     )
                 elif price < old_price:
                     send_discord(
+                        f"📉 SPADEK CENY\n€{old_price} → €{price}\nRynek: {market_name}\n{car['url']}"
+                    )
+    save_data(new)
+
+check()
