@@ -45,8 +45,12 @@ def get_inventory(market):
         print(f"Błąd API dla {market}: status {r.status_code}")
         return []
     data = r.json()
+    results = data.get("results", [])
+    if results:
+        print(f"Przykładowe auto z {market}:")
+        print(json.dumps(results[0], indent=2))
     cars = []
-    for car in data.get("results", []):
+    for car in results:
         price = car.get("Price") or car.get("price")
         vin = car.get("VIN") or car.get("vin")
         vehicle_url = car.get("VehicleUrl", "")
