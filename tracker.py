@@ -26,7 +26,18 @@ def save_data(data):
 def get_inventory(market):
     url = "https://www.tesla.com/inventory/api/v1/inventory-results"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Referer": "https://www.tesla.com/",
+        "Origin": "https://www.tesla.com",
+        "sec-ch-ua": '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin",
     }
     params = {
         "query": json.dumps({
@@ -79,8 +90,3 @@ def check():
                     )
                 elif price < old_price:
                     send_discord(
-                        f"📉 SPADEK CENY\n€{old_price} → €{price}\nRynek: {market_name}\n{car['url']}"
-                    )
-    save_data(new)
-
-check()
